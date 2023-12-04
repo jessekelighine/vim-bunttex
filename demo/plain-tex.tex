@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+%----------------------------------------------------------------------%
+%%% Default Title %%%
+\makeatletter\def\@maketitle{%
+\newpage\null\vskip2em%
+\begin{center}%
+	\let\footnote\thanks%
+	{\LARGE\@title\par}%
+	\vskip1.5em%
+	{\large\lineskip.5em%
+	\begin{tabular}[t]{c}%
+		\@author%
+	\end{tabular}%
+	\par}%
+	\vskip1em%
+	{\large\@date}%
+\end{center}%
+\par\vskip1.5em}
+\makeatother
+%----------------------------------------------------------------------%
+%%% Title %%%
+\title{This is the Title}
+\author{Iam A. Author}
+\date{\today}
+%----------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\end{document}
