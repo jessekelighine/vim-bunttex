@@ -25,16 +25,15 @@ syntax match   TexIgnore          "\\\(%\|{\|}\|\$\|#\|&\|!\|\^\|,\|;\|:\|`\|'\|
 syntax match   TexPreambleFirst   "\\\<\(NeedsTeXFormat\|documentclass\|ProvidesPackage\)\>" contains=@NoSpell
 syntax match   TexPreambleCommand "\\\<\(usepackage\|newcommand\|renewcommand\)\>"           contains=@NoSpell
 syntax match   TexArguments       "#\d\>"
-syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}"        contains=TexBeginEnd,TexDocEnv,TexEnv
+syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=TexBeginEnd,TexDocEnv,TexEnv
 syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR
-syntax match   TexRefCite         "\\\(label\|refeq\|refer\|url\|hyperlink\)\>"           contains=@NoSpell
-syntax match   TexRefCite         "\\\(page\|eq\|fig\|tab\|name\|h\|hyper\|auto\)\?ref\>" contains=@NoSpell
-syntax match   TexRefCite         "\\cite\(list\|field\|name\)\>"                         contains=@NoSpell
-syntax match   TexRefCite         "\\\(paren\|text\|foot\)\?cite\>"                       contains=@NoSpell
-syntax region  TexRefCiteEnv      start="\\\(label\|refeq\|refer\|url\|hyperlink\)\>{"           end="}" contains=@NoSpell,TexRefCite
-syntax region  TexRefCiteEnv      start="\\\(page\|eq\|fig\|tab\|name\|h\|hyper\|auto\)\?ref\>{" end="}" contains=@NoSpell,TexRefCite
-syntax region  TexRefCiteEnv      start="\\cite\(list\|field\|name\)\>{"                         end="}" contains=@NoSpell,TexRefCite
-syntax region  TexRefCiteEnv      start="\\\(paren\|text\|foot\)\?cite\>{"                       end="}" contains=@NoSpell,TexRefCite
+syntax region  TexIncludeGraphics start="\\includegraphics\(\[[^\[\]]\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
+
+let s:cmds = join(['label','refeq','refer','url','hyperlink',
+			\ '\(page\|eq\|fig\|tab\|name\|h\|hyper\|auto\)\?ref',
+			\ 'cite\(list\|field\|name\)','\(paren\|text\|foot\)\?cite'],'\|')
+execute 'syntax match  TexRefCite          "\\\('.s:cmds.'\)\>" contains=@NoSpell'
+execute 'syntax region TexRefCiteEnv start="\\\('.s:cmds.'\)\(\[[^\[\]]\+\]\)\?{" end="}" contains=@NoSpell,TexRefCite'
 
 highlight def link TexCommand         Green
 highlight def link TexComment         Comment

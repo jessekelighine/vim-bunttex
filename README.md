@@ -20,6 +20,7 @@ Two features of my LaTeX syntax files:
 	- [`mathnotes.vim`](syntax-additional/mathnotes.vim): For highlighting environments such as `definition`, `theroem`, `proof`, etc.
 	- [`plain_tex.vim`](syntax-additional/plain_tex.vim): For highlighting plain TeX command, e.g., `\@maketitle`.
 	- [`document.vim`](syntax-additional/document.vim): For highlighting `\begin{document}` and `\end{document}`.
+	- [`acronym.vim`](syntax-additional/acronym.vim): For not spellchecking acronyms in `\acrlong{}` or `\acrshort{}`.
 
 ## Installation
 
@@ -31,7 +32,7 @@ cd ~/.vim/pack/jessekelighine/start
 git clone https://github.com/jessekelighine/vim-bunttex
 ```
 
-**However**, I urgue you to simply put the file [`tex.vim`](syntax/tex.vim) in directory `~/.vim/syntax/` (or `~/.config/nvim/syntax/` for Neovim)
+**However**, I urge you to simply put the file [`tex.vim`](syntax/tex.vim) in directory `~/.vim/syntax/` (or `~/.config/nvim/syntax/` for Neovim)
 and only download the supporting files you need for two reasons:
 
 1. It's less than 50 lines of code.
