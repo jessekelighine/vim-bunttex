@@ -7,6 +7,5 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match AmsthmEnv "{\zs\(assumption\|lemma\|corollary\|example\|remark\|proposition\|problem\|question\|theorem\|definition\|proof\|claim\|axiom\)\ze\*\=}" contained
-
-highlight def link AmsthmEnv Blue
+syntax match TexEnv "{\zs\(assumption\|lemma\|corollary\|example\|remark\|proposition\)\ze\*\=}"  contained
+syntax match TexEnv "{\zs\(problem\|question\|theorem\|definition\|proof\|claim\|axiom\)\ze\*\=}" contained

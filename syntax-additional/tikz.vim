@@ -18,7 +18,7 @@ syntax match TikzYellow "\((\$\|\$)\)"
 syntax match TikzBlue   "\<\(let\|in\)\>"
 syntax region TikzOptionRegion start='\[' end='\]' contains=TikzOption,TikzOptDir,TikzLabel,TexSubMaths,TikzOptNum,TexCommand,TexMaths
 
-syntax match TikzPicEnv "{\zs\(tikzpicture\|scope\)\ze}" contained
+syntax match TexEnv "{\zs\(tikzpicture\|scope\)\ze}" contained
 
 highlight def link TikzOptNum Blue
 highlight def link TikzLabel  Purple
@@ -27,5 +27,3 @@ highlight def link TikzBlue   Blue
 highlight def link TikzDraw   Orange
 highlight def link TikzYellow Yellow
 highlight TikzOption ctermfg=255 cterm=bold gui=bold
-
-highlight def link TikzPicEnv Blue

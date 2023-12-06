@@ -7,6 +7,4 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match BeamerEnv "{\zs\(frame\|block\)\ze}" contained
-
-highlight def link BeamerEnv Blue
+syntax match TexEnv "{\zs\(frame\|block\)\ze}" contained

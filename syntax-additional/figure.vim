@@ -7,6 +7,4 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match TexFigEnv "{\zs\(figure\|subfigure\|table\|sidewaystable\|marginfigure\)\ze}" contained
-
-highlight def link TexFigEnv Blue
+syntax match TexEnv "{\zs\(figure\|subfigure\|table\|sidewaystable\|marginfigure\)\ze}" contained
