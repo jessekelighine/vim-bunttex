@@ -7,8 +7,8 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match TexSubCommand "\\[a-zA-Z]*@[a-zA-Z@]*" contains=@NoSpell
-syntax match TexSubCommand "\\[a-zA-Z]*_[a-zA-Z_]*" contains=@NoSpell
-syntax match TexSubCommand "\\\(makeatletter\|makeatother\)" contains=@NoSpell
+syntax match TexPlainCommand /\\[a-zA-Z]*@[a-zA-Z@]*/ contains=@NoSpell
+syntax match TexPlainCommand /\\[a-zA-Z]*_[a-zA-Z_]*/ contains=@NoSpell
+syntax match TexPlainCommand /\\\(makeatletter\|makeatother\)\>/ contains=@NoSpell
 
-highlight def link TexSubCommand Yellow
+highlight def link TexPlainCommand Yellow
