@@ -1,4 +1,4 @@
-" plain_tex.vim
+" acronym.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Author: Jesse C. Chen (jessekelighine on Github)                            "
@@ -7,8 +7,10 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match TexPlainCommand /\\[a-zA-Z]*@[a-zA-Z@]*/ contains=@NoSpell
-syntax match TexPlainCommand /\\[a-zA-Z]*_[a-zA-Z_]*/ contains=@NoSpell
-syntax match TexPlainCommand /\\\(makeatletter\|makeatother\)\>/ contains=@NoSpell
+syntax match TexAlgorithm /\\\(END\)\?\(FOR\|IF\|WHILE\|LOOP\)\>/ contains=@NoSpell
+syntax match TexAlgorithm /\\\(AND\|OR\|XOR\|NOT\|TRUE\|FALSE\)\>/ contains=@NoSpell
+syntax match TexAlgorithm /\\\(REQUIRE\|ENSURE\|RETURN\|PRINT\)\>/ contains=@NoSpell
+syntax match TexAlgorithm /\\\(STATE\|COMMENT\|ELSE\|TO\|REPEAT\|UNTIL\)\>/ contains=@NoSpell
+syntax match TexEnv /{\zs\(algorithm\|algorithmic\)\ze}/ contained
 
-highlight def link TexPlainCommand SpecialChar
+highlight def link TexAlgorithm Type

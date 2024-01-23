@@ -1,4 +1,4 @@
-" plain_tex.vim
+" verbatim.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Author: Jesse C. Chen (jessekelighine on Github)                            "
@@ -7,8 +7,4 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match TexPlainCommand /\\[a-zA-Z]*@[a-zA-Z@]*/ contains=@NoSpell
-syntax match TexPlainCommand /\\[a-zA-Z]*_[a-zA-Z_]*/ contains=@NoSpell
-syntax match TexPlainCommand /\\\(makeatletter\|makeatother\)\>/ contains=@NoSpell
-
-highlight def link TexPlainCommand SpecialChar
+syntax match TexVerbatim /\\[Vv]erb\(.\).\{-}\1/ contains=@NoSpell,TexCommand

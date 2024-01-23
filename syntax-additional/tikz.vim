@@ -21,12 +21,12 @@ syntax region TikzOption start='\[' end='\]' contains=TikzSeparator,TikzDirectio
 
 syntax match TexEnv "{\zs\(tikzpicture\|scope\)\ze}" contained
 
-highlight def link TikzNumber    Blue
-highlight def link TikzLabel     Purple
-highlight def link TikzDirection Grey
-highlight def link TikzLetIn     Blue
-highlight def link TikzDraw      Orange
-highlight def link TikzCommands  Yellow
-highlight def link TikzTree      Yellow
-highlight def link TikzCalc      Yellow
+highlight def link TikzNumber    Identifier
+highlight def link TikzLabel     Todo
+highlight def link TikzDirection SpecialComment
+highlight def link TikzLetIn     Identifier
+highlight def link TikzDraw      Tag
+highlight def link TikzCommands  Label
+highlight def link TikzTree      Label
+highlight def link TikzCalc      Label
 highlight TikzSeparator ctermfg=255 guifg=#FFFFFF cterm=bold gui=bold
