@@ -7,5 +7,6 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax match TexEnv "{\zs\(assumption\|lemma\|corollary\|example\|remark\|proposition\)\ze\*\=}"  contained
-syntax match TexEnv "{\zs\(problem\|question\|theorem\|definition\|proof\|claim\|axiom\)\ze\*\=}" contained
+syntax match TexEnv "{\zs\(assumption\|lemma\|corollary\|example\|remark\|proposition\)\ze\*\=}" contained
+syntax match TexEnv "{\zs\(theorem\|definition\|proof\|claim\|axiom\)\ze\*\=}" contained
+syntax match TexEnv "{\zs\(exercise\|problem\|question\)\ze\*\=}" contained
