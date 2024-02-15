@@ -18,9 +18,11 @@ Two features of my LaTeX syntax files:
 	- [`beamer.vim`](syntax-additional/beamer.vim): For beamer, highlighting `frame` and `block` environments. (see a [showcase](#beamer))
 	- [`figure.vim`](syntax-additional/figure.vim): For highlighting `figure` and `table` environments.
 	- [`mathnotes.vim`](syntax-additional/mathnotes.vim): For highlighting environments such as `definition`, `theroem`, `proof`, etc.
-	- [`plain_tex.vim`](syntax-additional/plain_tex.vim): For highlighting plain TeX command, e.g., `\@maketitle`.
+	- [`plaintex.vim`](syntax-additional/plaintex.vim): For highlighting plain TeX command, e.g., `\@maketitle`.
 	- [`document.vim`](syntax-additional/document.vim): For highlighting `\begin{document}` and `\end{document}`.
 	- [`acronym.vim`](syntax-additional/acronym.vim): For not spellchecking acronyms in `\acrlong{}` or `\acrshort{}`.
+	- [`algorithm.vim`](syntax-additional/algorithm.vim): For highlighting `algorithmic` commands, e.g., `\FOR`, `\ENDFOR`, etc.
+	- [`verbatim.vim`](syntax-additional/verbatim.vim): For not spellchecking text in verbatim environments `\verb` and `\Verb`.
 
 ## Installation
 
@@ -90,7 +92,7 @@ This is what you'll get from sourcing [`beamer.vim`](syntax-additional/beamer.vi
 
 ### Plain TeX
 
-This is what you'll get from sourcing [`plain_tex.vim`](syntax-additional/plain_tex.vim)
+This is what you'll get from sourcing [`plaintex.vim`](syntax-additional/plaintex.vim)
 (now commands like `\@maketitle` is colored in yellow):
 
 ![plain-tex](showcase/plain-tex.png)

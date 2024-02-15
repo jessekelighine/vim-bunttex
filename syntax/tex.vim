@@ -26,7 +26,7 @@ syntax match   TexPreambleCommand /\\\<\(usepackage\|newcommand\|renewcommand\)\
 syntax match   TexArguments       /#\d\>/
 syntax match   TexBeginEndHead    /\\\(begin\|end\)\>/ contained
 syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=TexDocEnv,TexEnv,TexBeginEndHead
-syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR
+syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR,TexAlgorithm
 syntax region  TexCommandWithPath start="\\includegraphics\(\[.\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
 syntax region  TexCommandWithPath start="\\input{" end="}" contains=@NoSpell,TexCommand
 
