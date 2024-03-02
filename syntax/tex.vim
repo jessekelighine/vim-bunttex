@@ -15,7 +15,7 @@ syntax match   TexCommand         /\\[a-zA-Z]\+/ contains=@NoSpell
 syntax match   TexAnd             /&/
 syntax match   TexTagItem         /\\\(item\|tag\)\>/
 syntax match   TexLR              /\\\(left\|right\|big\|Big\|middle\|Bigg\)\>/ contains=@NoSpell conceal cchar=→
-syntax match   TexFoot            /\\\(footnotemark\|footnote\|sidenote\)\>/ contains=@NoSpell
+syntax match   TexFoot            /\\\(footnotemark\|footnote\|footnotetext\|sidenote\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\\(sub\)\{0,2}\(section\|paragraph\|chapter\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\appendix\>/
 syntax match   TexComment         /%.*/  contains=@NoSpell,TexTODO
