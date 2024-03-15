@@ -9,13 +9,13 @@
 
 if exists("b:current_syntax") | finish | endif
 
-syntax keyword TexTODO            TODO contained
+syntax keyword TexTODO            TODO NOTE FIXME contained
 syntax match   TexCommand         /\\\{1,2}/
 syntax match   TexCommand         /\\[a-zA-Z]\+/ contains=@NoSpell
 syntax match   TexAnd             /&/
 syntax match   TexTagItem         /\\\(item\|tag\)\>/
 syntax match   TexLR              /\\\(left\|right\|big\|Big\|middle\|Bigg\)\>/ contains=@NoSpell conceal cchar=→
-syntax match   TexFoot            /\\\(footnotemark\|footnote\|footnotetext\|sidenote\)\>/ contains=@NoSpell
+syntax match   TexFoot            /\\\(footnotemark\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\\(sub\)\{0,2}\(section\|paragraph\|chapter\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\appendix\>/
 syntax match   TexComment         /%.*/  contains=@NoSpell,TexTODO
@@ -23,12 +23,15 @@ syntax match   TexTodoComment     /%%.*/ contains=TexTODO
 syntax match   TexIgnore          /\\\(%\|{\|}\|\$\|#\|&\|!\|\^\|,\|;\|:\|`\|'\|\"\|_\|=\||\|\[\|\]\|\~\)/
 syntax match   TexPreambleFirst   /\\\<\(NeedsTeXFormat\|documentclass\|ProvidesPackage\)\>/ contains=@NoSpell
 syntax match   TexPreambleCommand /\\\<\(usepackage\|newcommand\|renewcommand\)\>/           contains=@NoSpell
+syntax region  TexParen           start="{"  end="}" transparent contains=TOP
 syntax match   TexArguments       /#\d\>/
-syntax match   TexBeginEndHead    /\\\(begin\|end\)\>/ contained
+syntax match   TexBeginEndHead    /\\\(begin\|end\)\>/ containedin=TexEnvironment
+syntax match   TexEnv             /{\zs[a-zA-Z]\+\ze\*\{0,1}}/ containedin=TexEnvironment
 syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=TexDocEnv,TexEnv,TexBeginEndHead
 syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR,TexAlgorithm
 syntax region  TexCommandWithPath start="\\includegraphics\(\[.\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
 syntax region  TexCommandWithPath start="\\input{" end="}" contains=@NoSpell,TexCommand
+syntax region  TexFootnoteRegion  matchgroup=TexFootnote start="\\\(footnote\|footnotetext\|sidenote\){" end="}" contains=TOP
 
 let s:TexRefCite_commands = join([
 			\ 'label','refeq','refer','url','hyperlink',
@@ -43,7 +46,7 @@ highlight def link TexDollar       SpecialComment
 highlight def link TexAnd          Tag
 highlight def link TexBeginEndHead Keyword
 highlight def link TexTagItem      Debug
-highlight def link TexFoot         Label
+highlight def link TexFoot         Keyword
 highlight def link TexRefCite      Label
 highlight def link TexSection      Type
 
@@ -58,5 +61,7 @@ highlight def link TexPreambleFirst   StorageClass
 highlight def link TexPreambleCommand Function
 highlight def link TexArguments       SpecialChar
 highlight def link TexEnv             Identifier
+highlight def link TexFootnote        Keyword
+highlight TexFootnoteRegion cterm=underdotted gui=underdotted
 
 let b:current_syntax="tex"
