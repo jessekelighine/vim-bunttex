@@ -15,7 +15,7 @@ syntax match   TexCommand         /\\[a-zA-Z]\+/ contains=@NoSpell
 syntax match   TexAnd             /&/
 syntax match   TexTagItem         /\\\(item\|tag\)\>/
 syntax match   TexLR              /\\\(left\|right\|big\|Big\|middle\|Bigg\)\>/ contains=@NoSpell conceal cchar=→
-syntax match   TexFoot            /\\\(footnotemark\)\>/ contains=@NoSpell
+syntax match   TexFoot            /\\\(footnote\(mark\|text\)\{0,1}\|sidenote\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\\(sub\)\{0,2}\(section\|paragraph\|chapter\)\>/ contains=@NoSpell
 syntax match   TexSection         /\\appendix\>/
 syntax match   TexComment         /%.*/  contains=@NoSpell,TexTODO
@@ -31,7 +31,6 @@ syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=Tex
 syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR,TexAlgorithm
 syntax region  TexCommandWithPath start="\\includegraphics\(\[.\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
 syntax region  TexCommandWithPath start="\\input{" end="}" contains=@NoSpell,TexCommand
-syntax region  TexFootnoteRegion  matchgroup=TexFootnote start="\\\(footnote\|footnotetext\|sidenote\){" end="}" contains=TOP
 
 let s:TexRefCite_commands = join([
 			\ 'label','refeq','refer','url','hyperlink',
@@ -61,7 +60,5 @@ highlight def link TexPreambleFirst   StorageClass
 highlight def link TexPreambleCommand Function
 highlight def link TexArguments       SpecialChar
 highlight def link TexEnv             Identifier
-highlight def link TexFootnote        Keyword
-highlight TexFootnoteRegion cterm=underdotted gui=underdotted
 
 let b:current_syntax="tex"
