@@ -7,5 +7,6 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax region TexAcronym start="\\acr\(long\|short\){" end="}"        contains=@NoSpell,TexCommand
-syntax region TexAcronym start="\\newacronym{"         end="}{.\{-}}" contains=@NoSpell,TexCommand
+syntax region TexAcronym start="\\acr\(long\|short\){"  end="}"        contains=@NoSpell,TexCommand
+syntax region TexAcronym start="\\gls\(long\|short\)*{" end="}"        contains=@NoSpell,TexCommand
+syntax region TexAcronym start="\\newacronym{"          end="}{.\{-}}" contains=@NoSpell,TexCommand
