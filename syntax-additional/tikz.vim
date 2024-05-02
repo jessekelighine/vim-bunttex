@@ -28,5 +28,5 @@ highlight def link TikzLetIn     Identifier
 highlight def link TikzDraw      Tag
 highlight def link TikzCommands  Label
 highlight def link TikzTree      Label
-highlight def link TikzCalc      Label
+highlight def link TikzCalc      SpecialChar
 highlight TikzSeparator ctermfg=255 guifg=#FFFFFF cterm=bold gui=bold

@@ -20,6 +20,7 @@ syntax match   TexSection         /\\\(sub\)\{0,2}\(section\|paragraph\|chapter\
 syntax match   TexSection         /\\appendix\>/
 syntax match   TexComment         /%.*/  contains=@NoSpell,TexTODO
 syntax match   TexTodoComment     /%%.*/ contains=TexTODO
+syntax match   TexTodoComment     /%!.*/ contains=TexTODO
 syntax match   TexIgnore          /\\\(%\|{\|}\|\$\|#\|&\|!\|\^\|,\|;\|:\|`\|'\|\"\|_\|=\||\|\[\|\]\|\~\)/
 syntax match   TexPreambleFirst   /\\\<\(NeedsTeXFormat\|documentclass\|ProvidesPackage\)\>/ contains=@NoSpell
 syntax match   TexPreambleCommand /\\\<\(usepackage\|newcommand\|renewcommand\)\>/           contains=@NoSpell
