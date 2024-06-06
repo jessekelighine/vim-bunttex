@@ -32,6 +32,7 @@ syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=Tex
 syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR,TexAlgorithm
 syntax region  TexCommandWithPath start="\\includegraphics\(\[.\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
 syntax region  TexCommandWithPath start="\\input{" end="}" contains=@NoSpell,TexCommand
+syntax match   TexVerbatim        /\\[Vv]erb\(.\).\{-}\1/ contains=@NoSpell,TexCommand
 
 let s:TexRefCite_commands = join([
 			\ 'label','refeq','refer','url','hyperlink',
