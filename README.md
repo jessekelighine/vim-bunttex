@@ -15,14 +15,9 @@ Two features of my LaTeX syntax files:
   Sometimes you need extra highlightings, e.g., when writing beamer or Ti*k*Z.
   I also provide additional syntax files you can [use](#tips) in specific circumstances:
 	- [`tikz.vim`](syntax-additional/tikz.vim): For Ti*k*Z syntax. (see a [showcase](#tikz))
-	- [`beamer.vim`](syntax-additional/beamer.vim): For beamer, highlighting `frame` and `block` environments. (see a [showcase](#beamer))
-	- [`figure.vim`](syntax-additional/figure.vim): For highlighting `figure` and `table` environments.
-	- [`mathnotes.vim`](syntax-additional/mathnotes.vim): For highlighting environments such as `definition`, `theroem`, `proof`, etc.
 	- [`plaintex.vim`](syntax-additional/plaintex.vim): For highlighting plain TeX command, e.g., `\@maketitle`.
-	- [`document.vim`](syntax-additional/document.vim): For highlighting `\begin{document}` and `\end{document}`.
 	- [`acronym.vim`](syntax-additional/acronym.vim): For not spellchecking acronyms in `\acrlong{}` or `\acrshort{}`.
 	- [`algorithm.vim`](syntax-additional/algorithm.vim): For highlighting `algorithmic` commands, e.g., `\FOR`, `\ENDFOR`, etc.
-	- [`verbatim.vim`](syntax-additional/verbatim.vim): For not spellchecking text in verbatim environments `\verb` and `\Verb`.
 
 ## Installation
 
@@ -82,13 +77,6 @@ This is what you'll get with only the 50 lines of code from [`tex.vim`](syntax/t
 This is what you'll get from sourcing [`tikz.vim`](syntax-additional/tikz.vim):
 
 ![tikz](showcase/tikz.png)
-
-### Beamer
-
-This is what you'll get from sourcing [`beamer.vim`](syntax-additional/beamer.vim)
-(now `frame` and `block` environments are in blue):
-
-![beamer](showcase/beamer.png)
 
 ### Plain TeX
 
