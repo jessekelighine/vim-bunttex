@@ -29,7 +29,7 @@ syntax region  TexParen           start="{"  end="}" transparent contains=TOP
 syntax match   TexArguments       /#\d\>/
 syntax match   TexBeginEndHead    /\\\(begin\|end\)\>/ containedin=TexEnvironment
 syntax match   TexEnv             /{\zs[a-zA-Z]\+\ze\*\{0,1}}/ containedin=TexEnvironment
-syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=TexDocEnv,TexEnv,TexBeginEndHead
+syntax region  TexEnvironment     start="\\\(begin\|end\){" end="}" contains=TexDocEnv,TexEnv,TexEnvEmph,TexBeginEndHead
 syntax region  TexMaths           matchgroup=TexDollar start="\$" end="\$" contains=@NoSpell,TexCommand,TexIgnore,TexLR,TexAlgorithm
 syntax region  TexCommandWithPath start="\\includegraphics\(\[.\+\]\)\?{" end="}" contains=@NoSpell,TexCommand
 syntax region  TexCommandWithPath start="\\input{" end="}" contains=@NoSpell,TexCommand
@@ -62,5 +62,6 @@ highlight def link TexPreambleFirst   StorageClass
 highlight def link TexPreambleCommand Function
 highlight def link TexArguments       SpecialChar
 highlight def link TexEnv             Identifier
+highlight def link TexEnvEmph         Number
 
-let b:current_syntax="tex"
+let b:current_syntax = "tex"
